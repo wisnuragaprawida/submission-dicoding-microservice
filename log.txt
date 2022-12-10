@@ -1,0 +1,80 @@
+dell@dell-Latitude-5480:~/Documents/DEVOPS/FREECODE/a433-microservices-proyek-pertama$ bash build_push_image.sh 
+[+] Building 131.0s (11/11) FINISHED                                                                                                                  
+ => [internal] load build definition from Dockerfile                                                                                             0.0s
+ => => transferring dockerfile: 38B                                                                                                              0.0s
+ => [internal] load .dockerignore                                                                                                                0.0s
+ => => transferring context: 34B                                                                                                                 0.0s
+ => [internal] load metadata for docker.io/library/node:14-alpine                                                                                7.5s
+ => [auth] library/node:pull token for registry-1.docker.io                                                                                      0.0s
+ => [1/5] FROM docker.io/library/node:14-alpine@sha256:12b14bdfa8c89a1a060c53b5714157085700660b12ab7c50a907a4e19d95b6bf                         26.5s
+ => => resolve docker.io/library/node:14-alpine@sha256:12b14bdfa8c89a1a060c53b5714157085700660b12ab7c50a907a4e19d95b6bf                          0.0s
+ => => sha256:12b14bdfa8c89a1a060c53b5714157085700660b12ab7c50a907a4e19d95b6bf 1.43kB / 1.43kB                                                   0.0s
+ => => sha256:eaed9ed12bae01d0f5473c465f1b50b2ffe2c838c1482d82e4771e54bb62f214 1.16kB / 1.16kB                                                   0.0s
+ => => sha256:87112681acadc5285d472f954d23560bee9d105e156ca59e48f41bf4bf16881f 6.44kB / 6.44kB                                                   0.0s
+ => => sha256:ca7dd9ec2225f2385955c43b2379305acd51543c28cf1d4e94522b3d94cce3ce 2.81MB / 2.81MB                                                   2.1s
+ => => sha256:f6c774934c91f00c542a1fb93212d42cf819d47de47169f00eba8db7e7026f51 37.72MB / 37.72MB                                                17.2s
+ => => sha256:c8d9211bf297cc0df2b07d2ad8ee5a83f5f479165228a1a513004dba925cfc20 2.37MB / 2.37MB                                                   7.7s
+ => => extracting sha256:ca7dd9ec2225f2385955c43b2379305acd51543c28cf1d4e94522b3d94cce3ce                                                        1.0s
+ => => sha256:14523e6c1be223f204f3266fd2d66cc5d9caf28f41364bfa565923c09ed3b4db 449B / 449B                                                       2.9s
+ => => extracting sha256:f6c774934c91f00c542a1fb93212d42cf819d47de47169f00eba8db7e7026f51                                                        7.7s
+ => => extracting sha256:c8d9211bf297cc0df2b07d2ad8ee5a83f5f479165228a1a513004dba925cfc20                                                        0.5s
+ => => extracting sha256:14523e6c1be223f204f3266fd2d66cc5d9caf28f41364bfa565923c09ed3b4db                                                        0.0s
+ => [internal] load build context                                                                                                                0.2s
+ => => transferring context: 1.06kB                                                                                                              0.1s
+ => [2/5] RUN mkdir -p /app                                                                                                                      1.2s
+ => [3/5] WORKDIR /app                                                                                                                           0.1s
+ => [4/5] COPY . .                                                                                                                               0.1s
+ => [5/5] RUN npm install --production --unsafe-perm && npm run build                                                                           92.3s
+ => exporting to image                                                                                                                           2.8s 
+ => => exporting layers                                                                                                                          2.8s 
+ => => writing image sha256:c310b584cfe9c5d3094a487222302f69715a6a94a73c74dc90b5e3bae0fa9f35                                                     0.0s 
+ => => naming to docker.io/library/item-app:v1                                                                                                   0.0s 
+                                                                                                                                                      
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them                                                  
+
+REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
+item-app      v1        c310b584cfe9   5 seconds ago   156MB
+todo-app      v1        268826700936   3 days ago      458MB
+hello-world   v1        479b1df038f4   2 weeks ago     924MB
+hello-world   latest    cac5e99aaf2b   2 weeks ago     924MB
+
+Error: Cannot perform an interactive login from a non TTY device
+The push refers to repository [docker.io/wisnuprawida/item-app]
+151f5936f421: Pushed 
+0886a056939c: Pushed 
+5f70bf18a086: Pushed 
+c50c507f0559: Pushed 
+3af570d59c20: Mounted from library/node 
+58db50de30fc: Mounted from library/node 
+d28200441f34: Mounted from library/node 
+e5e13b0c77cb: Mounted from library/node 
+v1: digest: sha256:4e82dc77ef1d430fa8703499e01bba687725f28faf3ef0fbc097ca3ea572fe0d size: 1993
+
+
+//docker compose
+dell@dell-Latitude-5480:~/Documents/DEVOPS/FREECODE/a433-microservices-proyek-pertama$ docker compose up -d
+[+] Running 14/14
+ ⠿ item-db Pulled                                                                                                                              128.7s
+   ⠿ 92473f7ef455 Pull complete                                                                                                                 69.3s
+   ⠿ fb52bde70123 Pull complete                                                                                                                 69.9s
+   ⠿ 64788f86be3f Pull complete                                                                                                                 70.4s
+   ⠿ 33f6d5f2e001 Pull complete                                                                                                                 70.7s
+   ⠿ 570e56656608 Pull complete                                                                                                                 71.2s
+   ⠿ f518a872ab12 Pull complete                                                                                                                 73.5s
+   ⠿ c9bdae151f64 Pull complete                                                                                                                 74.3s
+   ⠿ b2c58da5f563 Pull complete                                                                                                                 74.7s
+   ⠿ 2928038a6053 Pull complete                                                                                                                 75.2s
+   ⠿ 29a16c1b79ab Pull complete                                                                                                                 75.6s
+   ⠿ efec0f86077c Pull complete                                                                                                                119.1s
+   ⠿ 261a04726d31 Pull complete                                                                                                                119.4s
+   ⠿ 7c4062426e72 Pull complete                                                                                                                119.8s
+[+] Running 3/4
+ ⠿ Network a433-microservices-proyek-pertama_default       Created                                                                               0.5s
+ ⠿ Volume "a433-microservices-proyek-pertama_app-db"       Created                                                                               0.0s
+ ⠿ Container a433-microservices-proyek-pertama-item-db-1   Started                                                                               4.3s
+ ⠿ Container a433-microservices-proyek-pertama-item-app-1  Starting                                                                              2.6s
+Error response from daemon: Ports are not available: exposing port TCP 0.0.0.0:80 -> 0.0.0.0:0: listen tcp 0.0.0.0:80: bind: address already in use
+dell@dell-Latitude-5480:~/Documents/DEVOPS/FREECODE/a433-microservices-proyek-pertama$ docker compose up -d
+[+] Running 2/2
+ ⠿ Container a433-microservices-proyek-pertama-item-db-1   Started                                                                               3.9s
+ ⠿ Container a433-microservices-proyek-pertama-item-app-1  Started     
